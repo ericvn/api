@@ -23,6 +23,7 @@
 // $description: Request authentication configuration for workloads.
 // $location: https://istio.io/docs/reference/config/security/request_authentication.html
 // $aliases: [/docs/reference/config/security/v1beta1/request_authentication]
+// $mode: none
 
 package v1beta1
 
@@ -299,7 +300,7 @@ const (
 // +k8s:deepcopy-gen=true
 // -->
 // <!-- istio code generation tags
-// +istio.io/sync-start
+// +istio.io/sync-from:security/v1/request_authentication.proto
 // -->
 type RequestAuthentication struct {
 	state         protoimpl.MessageState

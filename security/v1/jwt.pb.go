@@ -23,7 +23,6 @@
 // $description: Configuration to validate JWT.
 // $location: https://istio.io/docs/reference/config/security/jwt.html
 // $aliases: [/docs/reference/config/security/v1/jwt]
-// $mode: none
 
 package v1
 
@@ -44,7 +43,7 @@ const (
 )
 
 // <!-- istio code generation tags
-// +istio.io/sync-from:security/v1beta1/jwt.proto
+// +istio.io/sync-start
 // -->
 // JSON Web Token (JWT) token format for authentication as defined by
 // [RFC 7519](https://tools.ietf.org/html/rfc7519). See [OAuth 2.0](https://tools.ietf.org/html/rfc6749) and

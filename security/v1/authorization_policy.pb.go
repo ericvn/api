@@ -24,7 +24,7 @@
 // $location: https://istio.io/docs/reference/config/security/authorization-policy.html
 // $weight: 20
 // $aliases: [/docs/reference/config/authorization/authorization-policy]
-// $mode: none
+// $mode: file
 
 // Istio Authorization Policy enables access control on workloads in the mesh.
 //
@@ -380,7 +380,7 @@ func (AuthorizationPolicy_Action) EnumDescriptor() ([]byte, []int) {
 // +k8s:deepcopy-gen=true
 // -->
 // <!-- istio code generation tags
-// +istio.io/sync-from:security/v1beta1/authorization_policy.proto
+// +istio.io/sync-start
 // -->
 type AuthorizationPolicy struct {
 	state         protoimpl.MessageState

@@ -254,7 +254,7 @@
 // This feature is currently experimental.
 //
 // ```yaml
-// apiVersion: networking.istio.io/v1beta1
+// apiVersion: networking.istio.io/v1
 // kind: Sidecar
 // metadata:
 //   name: ratings
@@ -289,7 +289,7 @@
 //   selector:
 //     app: ratings
 // ---
-// apiVersion: security.istio.io/v1beta1
+// apiVersion: security.istio.io/v1
 // kind: PeerAuthentication
 // metadata:
 //   name: ratings-peer-auth

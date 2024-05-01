@@ -212,7 +212,7 @@ in order to set mTLS mode to &ldquo;DISABLE&rdquo; on specific
 ports.
 In this example, the mTLS mode is disabled on PORT 80.
 This feature is currently experimental.</p>
-<pre><code class="language-yaml">apiVersion: networking.istio.io/v1beta1
+<pre><code class="language-yaml">apiVersion: networking.istio.io/v1
 kind: Sidecar
 metadata:
   name: ratings
@@ -247,7 +247,7 @@ spec:
   selector:
     app: ratings
 ---
-apiVersion: security.istio.io/v1beta1
+apiVersion: security.istio.io/v1
 kind: PeerAuthentication
 metadata:
   name: ratings-peer-auth

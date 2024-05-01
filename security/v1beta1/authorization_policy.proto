@@ -22,6 +22,7 @@ import "type/v1beta1/selector.proto";
 // $location: https://istio.io/docs/reference/config/security/authorization-policy.html
 // $weight: 20
 // $aliases: [/docs/reference/config/authorization/authorization-policy]
+// $mode: none
 
 // Istio Authorization Policy enables access control on workloads in the mesh.
 //
@@ -272,7 +273,7 @@ option go_package="istio.io/api/security/v1beta1";
 // +k8s:deepcopy-gen=true
 // -->
 // <!-- istio code generation tags
-// +istio.io/sync-start
+// +istio.io/sync-from:security/v1/authorization_policy.proto
 // -->
 message AuthorizationPolicy {
   // Optional. The selector decides where to apply the authorization policy. The selector will match with workloads
