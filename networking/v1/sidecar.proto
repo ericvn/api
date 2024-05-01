@@ -241,6 +241,71 @@ import "networking/v1/virtual_service.proto";
 //     - "*/*"
 // ```
 //
+// The following example declares a `Sidecar` configuration in the
+// `prod-us1` namespace for all pods with labels `app: ratings`
+// belonging to the `ratings.prod-us1` service.  The service accepts
+// inbound HTTPS traffic on port 8443 and the sidecar proxy terminates
+// one way TLS using the given server certificates.
+// The traffic is then forwarded to the attached workload instance
+// listening on a Unix domain socket.
+// It is expected that PeerAuthentication policy would be configured
+// in order to set mTLS mode to "DISABLE" on specific
+// ports.
+// In this example, the mTLS mode is disabled on PORT 80.
+// This feature is currently experimental.
+//
+// ```yaml
+// apiVersion: networking.istio.io/v1beta1
+// kind: Sidecar
+// metadata:
+//   name: ratings
+//   namespace: prod-us1
+// spec:
+//   workloadSelector:
+//     labels:
+//       app: ratings
+//   ingress:
+//   - port:
+//       number: 80
+//       protocol: HTTPS
+//       name: somename
+//     defaultEndpoint: unix:///var/run/someuds.sock
+//     tls:
+//       mode: SIMPLE
+//       privateKey: "/etc/certs/privatekey.pem"
+//       serverCertificate: "/etc/certs/servercert.pem"
+// ---
+// apiVersion: v1
+// kind: Service
+// metadata:
+//   name: ratings
+//   labels:
+//     app: ratings
+//     service: ratings
+// spec:
+//   ports:
+//   - port: 8443
+//     name: https
+//     targetPort: 80
+//   selector:
+//     app: ratings
+// ---
+// apiVersion: security.istio.io/v1beta1
+// kind: PeerAuthentication
+// metadata:
+//   name: ratings-peer-auth
+//   namespace: prod-us1
+// spec:
+//   selector:
+//     matchLabels:
+//       app: ratings
+//   mtls:
+//     mode: STRICT
+//   portLevelMtls:
+//     80:
+//       mode: DISABLE
+// ```
+//
 // In addition to configuring traffic capture and how traffic is forwarded to the app,
 // it's possible to control inbound connection pool settings. By default, Istio pushes
 // connection pool settings from `DestinationRules` to both clients (for outbound
