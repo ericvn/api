@@ -23,6 +23,7 @@
 // $description: Telemetry configuration for workloads.
 // $location: https://istio.io/docs/reference/config/telemetry.html
 // $aliases: [/docs/reference/config/telemetry/v1alpha1/telemetry]
+// $mode: none
 
 // Telemetry defines how the telemetry is generated for workloads within a mesh.
 //
@@ -545,7 +546,7 @@ func (MetricsOverrides_TagOverride_Operation) EnumDescriptor() ([]byte, []int) {
 // +k8s:deepcopy-gen=true
 // -->
 // <!-- istio code generation tags
-// +istio.io/sync-start
+// +istio.io/sync-from:telemetry/v1/telemetry.proto
 // -->
 type Telemetry struct {
 	state         protoimpl.MessageState

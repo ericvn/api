@@ -19,8 +19,9 @@ set -eEou pipefail
 # sync.sh keeps pairs of files in sync. Specifically, this is used for multi version protobuf.
 # These files have a unique (comment) header per version, but should have identical proto definitions.
 # To pair two files, The +istio.io/sync-{from,start} tags can be added.
-# For example: In v1beta1/service_entry.proto, we can add `+istio.io/sync-from:networking/v1alpha3/service_entry.proto`.
-# Next, we add `+istio.io/sync-start` to the `v1alpha3/service_entry.proto` file
+# For example: In v1alpha3/service_entry.proto, we can add `+istio.io/sync-from:networking/v1/service_entry.proto`.
+# Next, we add `+istio.io/sync-start` to the `v1/service_entry.proto` file
+# This implies newer files get a sync-start while the previous new file we become a sync-from.
 
 FROM_TAG="+istio.io/sync-from"
 START_TAG="+istio.io/sync-start"
@@ -42,7 +43,8 @@ find . -name '*.proto'  -not -path "./common-protos/*" -print0 | while read -r -
     echo "${header}" > "${file}"
     # We skip the first line of the replacement to avoid copying the start tag
     echo "${body}" | tail -n +2 >> "${file}"
-    # Check to make sure mode is set newer version file so there are not duplicate pb.html files in the different versions
+    # Check to make sure mode:none is set in the older version file so there are no duplicate pb.html files.
+    #mode:none implies no html files are genereated
     mode="$(grep "${MODE}" "${file}" || true)"
     if [[ "${mode}" == "" ]]; then # mode is not present we need to add it
       echo "for ${file} the mode is empty ${mode}"
@@ -55,7 +57,7 @@ find . -name '*.proto'  -not -path "./common-protos/*" -print0 | while read -r -
     # Skip the first line of the after section to avoid copying the alias tag
       echo "${after}" | tail -n +2 >> "${file}"
     fi
-    # Check to make sure mode is NOT set older version file so there are not duplicate pb.html files in the different versions
+    # Check to make sure mode is NOT set in the newer version file so there are no duplicate pb.html files.
     mode_rep="$(grep "${MODE}" "${replacement}" || true)"
     if [[ "${mode_rep}" != "" ]]; then # mode should not be in the replacement file
       echo "for ${replacement} the mode is ${mode_rep}"

@@ -208,7 +208,7 @@ func (HTTPRedirect_RedirectPortSelection) EnumDescriptor() ([]byte, []int) {
 // +k8s:deepcopy-gen=true
 // -->
 // <!-- istio code generation tags
-// +istio.io/sync-from:networking/v1alpha3/virtual_service.proto
+// +istio.io/sync-from:networking/v1/virtual_service.proto
 // -->
 type VirtualService struct {
 	state         protoimpl.MessageState

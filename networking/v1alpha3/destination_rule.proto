@@ -24,6 +24,7 @@ import "type/v1beta1/selector.proto";
 // $description: Configuration affecting load balancing, outlier detection, etc.
 // $location: https://istio.io/docs/reference/config/networking/destination-rule.html
 // $aliases: [/docs/reference/config/networking/v1alpha3/destination-rule]
+// $mode: none
 
 // `DestinationRule` defines policies that apply to traffic intended for a
 // service after routing has occurred. These rules specify configuration
@@ -150,7 +151,7 @@ option go_package = "istio.io/api/networking/v1alpha3";
 // +k8s:deepcopy-gen=true
 // -->
 // <!-- istio code generation tags
-// +istio.io/sync-start
+// +istio.io/sync-from:networking/v1/destination_rule.proto
 // -->
 message DestinationRule {
   // The name of a service from the service registry. Service
@@ -456,7 +457,7 @@ message LoadBalancerSettings {
       // Path to set for the cookie.
       string path = 2;
       // Lifetime of the cookie. If specified, a cookie with the TTL will be
-      // generated if the cookie is not present. If the TTL is present and zero, 
+      // generated if the cookie is not present. If the TTL is present and zero,
       // the generated cookie will be a session cookie.
       google.protobuf.Duration ttl = 3;
     };
@@ -642,7 +643,7 @@ message ConnectionPoolSettings {
     bool use_client_protocol = 7;
 
     // The maximum number of concurrent streams allowed for a peer on one HTTP/2 connection.
-    // Defaults to 2^31-1. 
+    // Defaults to 2^31-1.
     int32 max_concurrent_streams = 8;
   };
 

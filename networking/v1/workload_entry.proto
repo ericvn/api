@@ -19,7 +19,6 @@ syntax = "proto3";
 // $description: Configuration affecting VMs onboarded into the mesh.
 // $location: https://istio.io/docs/reference/config/networking/workload-entry.html
 // $aliases: [/docs/reference/config/networking/v1/workload-entry]
-// $mode: none
 
 // `WorkloadEntry` enables operators to describe the properties of a
 // single non-Kubernetes workload such as a VM or a bare metal server
@@ -130,9 +129,9 @@ syntax = "proto3";
 // ```
 //
 // The following example declares a VM workload without an address.
-// An alternative to having istiod read from remote API servers is 
-// to write a `WorkloadEntry` in the local cluster that represents 
-// the Workload(s) in the remote network with the given labels. A 
+// An alternative to having istiod read from remote API servers is
+// to write a `WorkloadEntry` in the local cluster that represents
+// the Workload(s) in the remote network with the given labels. A
 // single `WorkloadEntry` with weights represent the aggregate of all
 // the actual workloads in a given remote network.
 //
@@ -176,7 +175,7 @@ option go_package = "istio.io/api/networking/v1";
 // +k8s:deepcopy-gen=true
 // -->
 // <!-- istio code generation tags
-// +istio.io/sync-from:networking/v1alpha3/workload_entry.proto
+// +istio.io/sync-start
 // -->
 message WorkloadEntry {
   // Address associated with the network endpoint without the

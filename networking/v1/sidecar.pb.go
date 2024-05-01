@@ -23,7 +23,6 @@
 // $description: Configuration affecting network reachability of a sidecar.
 // $location: https://istio.io/docs/reference/config/networking/sidecar.html
 // $aliases: [/docs/reference/config/networking/v1/sidecar]
-// $mode: none
 
 // `Sidecar` describes the configuration of the sidecar proxy that mediates
 // inbound and outbound communication to the workload instance it is attached to. By
@@ -427,7 +426,7 @@ func (OutboundTrafficPolicy_Mode) EnumDescriptor() ([]byte, []int) {
 // +k8s:deepcopy-gen=true
 // -->
 // <!-- istio code generation tags
-// +istio.io/sync-from:networking/v1alpha3/sidecar.proto
+// +istio.io/sync-start
 // -->
 type Sidecar struct {
 	state         protoimpl.MessageState

@@ -23,7 +23,6 @@
 // $description: Describes a collection of workload instances.
 // $location: https://istio.io/docs/reference/config/networking/workload-group.html
 // $aliases: [/docs/reference/config/networking/v1alpha3/workload-group]
-// $mode: none
 
 // `WorkloadGroup` describes a collection of workload instances.
 // It provides a specification that the workload instances can use to bootstrap
@@ -115,7 +114,7 @@ const (
 // +k8s:deepcopy-gen=true
 // -->
 // <!-- istio code generation tags
-// +istio.io/sync-from:networking/v1alpha3/workload_group.proto
+// +istio.io/sync-start
 // -->
 type WorkloadGroup struct {
 	state         protoimpl.MessageState

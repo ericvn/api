@@ -194,7 +194,7 @@ const (
 // +k8s:deepcopy-gen=true
 // -->
 // <!-- istio code generation tags
-// +istio.io/sync-from:networking/v1alpha3/workload_entry.proto
+// +istio.io/sync-from:networking/v1/workload_entry.proto
 // -->
 type WorkloadEntry struct {
 	state         protoimpl.MessageState

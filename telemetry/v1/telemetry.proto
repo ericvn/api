@@ -24,7 +24,6 @@ import "google/protobuf/wrappers.proto";
 // $description: Telemetry configuration for workloads.
 // $location: https://istio.io/docs/reference/config/telemetry.html
 // $aliases: [/docs/reference/config/telemetry/v1/telemetry]
-// $mode: none
 
 // Telemetry defines how the telemetry is generated for workloads within a mesh.
 //
@@ -44,7 +43,7 @@ import "google/protobuf/wrappers.proto";
 // 3. Root namespace configuration
 //
 // ## Examples
-// 
+//
 // Policy to enable random sampling for 10% of traffic:
 // ```yaml
 // apiVersion: telemetry.istio.io/v1
@@ -261,7 +260,7 @@ option go_package = "istio.io/api/telemetry/v1";
 // -->
 // -->
 // <!-- istio code generation tags
-// +istio.io/sync-from:telemetry/v1alpha1/telemetry.proto
+// +istio.io/sync-start
 // -->
 message Telemetry {
   // Optional. The selector decides where to apply the policy.
@@ -446,7 +445,7 @@ message Metrics {
   // a best practice to list any universal overrides first, with tailored
   // overrides following them.
   repeated MetricsOverrides overrides = 2;
-  
+
   // Optional. Reporting interval allows configuration of the time between calls out to for metrics reporting.
   // This currently only supports TCP metrics but we may use this for long duration HTTP streams in the future.
   // The default duration is `5s`.

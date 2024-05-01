@@ -388,7 +388,7 @@ func (ClientTLSSettings_TLSmode) EnumDescriptor() ([]byte, []int) {
 // +k8s:deepcopy-gen=true
 // -->
 // <!-- istio code generation tags
-// +istio.io/sync-from:networking/v1alpha3/destination_rule.proto
+// +istio.io/sync-from:networking/v1/destination_rule.proto
 // -->
 type DestinationRule struct {
 	state         protoimpl.MessageState

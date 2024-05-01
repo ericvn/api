@@ -428,7 +428,7 @@ func (OutboundTrafficPolicy_Mode) EnumDescriptor() ([]byte, []int) {
 // +k8s:deepcopy-gen=true
 // -->
 // <!-- istio code generation tags
-// +istio.io/sync-from:networking/v1alpha3/sidecar.proto
+// +istio.io/sync-from:networking/v1/sidecar.proto
 // -->
 type Sidecar struct {
 	state         protoimpl.MessageState

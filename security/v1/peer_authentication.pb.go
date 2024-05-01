@@ -23,7 +23,6 @@
 // $description: Peer authentication configuration for workloads.
 // $location: https://istio.io/docs/reference/config/security/peer_authentication.html
 // $aliases: [/docs/reference/config/security/v1/peer_authentication]
-// $mode: none
 
 package v1
 
@@ -223,7 +222,7 @@ func (PeerAuthentication_MutualTLS_Mode) EnumDescriptor() ([]byte, []int) {
 // +k8s:deepcopy-gen=true
 // -->
 // <!-- istio code generation tags
-// +istio.io/sync-from:security/v1beta1/peer_authentication.proto
+// +istio.io/sync-start
 // -->
 type PeerAuthentication struct {
 	state         protoimpl.MessageState

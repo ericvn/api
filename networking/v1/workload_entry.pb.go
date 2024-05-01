@@ -23,7 +23,6 @@
 // $description: Configuration affecting VMs onboarded into the mesh.
 // $location: https://istio.io/docs/reference/config/networking/workload-entry.html
 // $aliases: [/docs/reference/config/networking/v1/workload-entry]
-// $mode: none
 
 // `WorkloadEntry` enables operators to describe the properties of a
 // single non-Kubernetes workload such as a VM or a bare metal server
@@ -193,7 +192,7 @@ const (
 // +k8s:deepcopy-gen=true
 // -->
 // <!-- istio code generation tags
-// +istio.io/sync-from:networking/v1alpha3/workload_entry.proto
+// +istio.io/sync-start
 // -->
 type WorkloadEntry struct {
 	state         protoimpl.MessageState

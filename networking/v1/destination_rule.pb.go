@@ -23,7 +23,6 @@
 // $description: Configuration affecting load balancing, outlier detection, etc.
 // $location: https://istio.io/docs/reference/config/networking/destination-rule.html
 // $aliases: [/docs/reference/config/networking/v1/destination-rule]
-// $mode: none
 
 // `DestinationRule` defines policies that apply to traffic intended for a
 // service after routing has occurred. These rules specify configuration
@@ -387,7 +386,7 @@ func (ClientTLSSettings_TLSmode) EnumDescriptor() ([]byte, []int) {
 // +k8s:deepcopy-gen=true
 // -->
 // <!-- istio code generation tags
-// +istio.io/sync-from:networking/v1alpha3/destination_rule.proto
+// +istio.io/sync-start
 // -->
 type DestinationRule struct {
 	state         protoimpl.MessageState

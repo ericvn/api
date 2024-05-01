@@ -23,7 +23,6 @@
 // $description: Configuration affecting label/content routing, sni routing, etc.
 // $location: https://istio.io/docs/reference/config/networking/virtual-service.html
 // $aliases: [/docs/reference/config/networking/v1/virtual-service]
-// $mode: none
 
 // Configuration affecting traffic routing. Here are a few terms useful to define
 // in the context of traffic routing.
@@ -207,7 +206,7 @@ func (HTTPRedirect_RedirectPortSelection) EnumDescriptor() ([]byte, []int) {
 // +k8s:deepcopy-gen=true
 // -->
 // <!-- istio code generation tags
-// +istio.io/sync-from:networking/v1alpha3/virtual_service.proto
+// +istio.io/sync-start
 // -->
 type VirtualService struct {
 	state         protoimpl.MessageState

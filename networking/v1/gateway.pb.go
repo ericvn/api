@@ -23,7 +23,6 @@
 // $description: Configuration affecting edge load balancer.
 // $location: https://istio.io/docs/reference/config/networking/gateway.html
 // $aliases: [/docs/reference/config/networking/v1/gateway]
-// $mode: none
 
 // `Gateway` describes a load balancer operating at the edge of the mesh
 // receiving incoming or outgoing HTTP/TCP connections. The specification
@@ -385,7 +384,7 @@ func (ServerTLSSettings_TLSProtocol) EnumDescriptor() ([]byte, []int) {
 // +k8s:deepcopy-gen=true
 // -->
 // <!-- istio code generation tags
-// +istio.io/sync-from:networking/v1alpha3/gateway.proto
+// +istio.io/sync-start
 // -->
 type Gateway struct {
 	state         protoimpl.MessageState

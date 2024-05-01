@@ -23,7 +23,6 @@
 // $description: Configuration affecting service registry.
 // $location: https://istio.io/docs/reference/config/networking/service-entry.html
 // $aliases: [/docs/reference/config/networking/v1/service-entry]
-// $mode: none
 
 // `ServiceEntry` enables adding additional entries into Istio's
 // internal service registry, so that auto-discovered services in the
@@ -592,7 +591,7 @@ func (ServiceEntry_Resolution) EnumDescriptor() ([]byte, []int) {
 // +k8s:deepcopy-gen=true
 // -->
 // <!-- istio code generation tags
-// +istio.io/sync-from:networking/v1alpha3/service_entry.proto
+// +istio.io/sync-start
 // -->
 type ServiceEntry struct {
 	state         protoimpl.MessageState

@@ -22,18 +22,17 @@ import "networking/v1/workload_entry.proto";
 // $description: Describes a collection of workload instances.
 // $location: https://istio.io/docs/reference/config/networking/workload-group.html
 // $aliases: [/docs/reference/config/networking/v1alpha3/workload-group]
-// $mode: none
 
 // `WorkloadGroup` describes a collection of workload instances.
-// It provides a specification that the workload instances can use to bootstrap 
-// their proxies, including the metadata and identity. It is only intended to 
-// be used with non-k8s workloads like Virtual Machines, and is meant to mimic 
-// the existing sidecar injection and deployment specification model used for 
+// It provides a specification that the workload instances can use to bootstrap
+// their proxies, including the metadata and identity. It is only intended to
+// be used with non-k8s workloads like Virtual Machines, and is meant to mimic
+// the existing sidecar injection and deployment specification model used for
 // Kubernetes workloads to bootstrap Istio proxies.
 //
-// The following example declares a workload group representing a collection 
+// The following example declares a workload group representing a collection
 // of workloads that will be registered under `reviews` in namespace
-// `bookinfo`. The set of labels will be associated with each workload 
+// `bookinfo`. The set of labels will be associated with each workload
 // instance during the bootstrap process, and the ports 3550 and 8080
 // will be associated with the workload group and use service account `default`.
 // `app.kubernetes.io/version` is just an arbitrary example of a label.
@@ -76,7 +75,7 @@ option go_package = "istio.io/api/networking/v1";
 // `WorkloadGroup` enables specifying the properties of a single workload for bootstrap and
 // provides a template for `WorkloadEntry`, similar to how `Deployment` specifies properties
 // of workloads via `Pod` templates. A `WorkloadGroup` can have more than one `WorkloadEntry`.
-// `WorkloadGroup` has no relationship to resources which control service registry like `ServiceEntry` 
+// `WorkloadGroup` has no relationship to resources which control service registry like `ServiceEntry`
 // and as such doesn't configure host name for these workloads.
 //
 // <!-- crd generation tags
@@ -100,7 +99,7 @@ option go_package = "istio.io/api/networking/v1";
 // +k8s:deepcopy-gen=true
 // -->
 // <!-- istio code generation tags
-// +istio.io/sync-from:networking/v1alpha3/workload_group.proto
+// +istio.io/sync-start
 // -->
 message WorkloadGroup {
   // Metadata that will be used for all corresponding `WorkloadEntries`.

@@ -386,7 +386,7 @@ func (ServerTLSSettings_TLSProtocol) EnumDescriptor() ([]byte, []int) {
 // +k8s:deepcopy-gen=true
 // -->
 // <!-- istio code generation tags
-// +istio.io/sync-from:networking/v1alpha3/gateway.proto
+// +istio.io/sync-from:networking/v1/gateway.proto
 // -->
 type Gateway struct {
 	state         protoimpl.MessageState
